@@ -1,0 +1,243 @@
+.playground-page {
+  min-height: calc(100vh - 200px);
+  padding: 3rem 0;
+  background: linear-gradient(to bottom, #f7fafc 0%, #ffffff 100%);
+}
+
+.playground-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.playground-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.playground-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin: 0 0 1rem 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.playground-subtitle {
+  font-size: 1.2rem;
+  color: #4a5568;
+  margin: 0;
+}
+
+.language-selector {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.lang-button {
+  padding: 0.75rem 2rem;
+  background: white;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #4a5568;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.lang-button:hover {
+  border-color: #667eea;
+  color: #667eea;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(102, 126, 234, 0.2);
+}
+
+.lang-button.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-color: transparent;
+  color: white;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.custom-code-toggle {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.toggle-button {
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.toggle-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(102, 126, 234, 0.3);
+}
+
+.custom-code-section {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.custom-code-section h2 {
+  color: #2d3748;
+  margin: 0 0 1.5rem 0;
+  font-size: 1.5rem;
+}
+
+.custom-code-editor {
+  margin-bottom: 1.5rem;
+}
+
+.code-textarea {
+  width: 100%;
+  padding: 1rem;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'Courier New', monospace;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  background: #1e1e1e;
+  color: #d4d4d4;
+  border: 2px solid #404040;
+  border-radius: 8px;
+  resize: vertical;
+  min-height: 200px;
+}
+
+.code-textarea:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.examples-section {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.examples-section h2 {
+  color: #2d3748;
+  margin: 0 0 2rem 0;
+  font-size: 1.8rem;
+}
+
+.examples-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.example-item {
+  padding: 1.5rem;
+  background: #f7fafc;
+  border-radius: 8px;
+  border-left: 4px solid #667eea;
+}
+
+.example-item h3 {
+  color: #2d3748;
+  margin: 0 0 1rem 0;
+  font-size: 1.3rem;
+}
+
+.no-examples {
+  text-align: center;
+  padding: 3rem;
+  color: #718096;
+}
+
+.playground-info {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+}
+
+.playground-info h3 {
+  color: #2d3748;
+  margin: 0 0 1rem 0;
+  font-size: 1.3rem;
+}
+
+.playground-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.playground-info li {
+  padding: 0.5rem 0;
+  color: #4a5568;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.playground-info li:before {
+  content: "✓ ";
+  color: #667eea;
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+.playground-info a {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.playground-info a:hover {
+  text-decoration: underline;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .playground-page {
+    padding: 2rem 0;
+  }
+
+  .playground-header h1 {
+    font-size: 2rem;
+  }
+
+  .playground-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .language-selector {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .lang-button {
+    width: 100%;
+  }
+
+  .custom-code-section,
+  .examples-section,
+  .playground-info {
+    padding: 1.5rem;
+  }
+
+  .code-textarea {
+    font-size: 0.85rem;
+  }
+}

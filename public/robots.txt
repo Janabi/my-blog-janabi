@@ -1,0 +1,13 @@
+# robots.txt for Janabi Programmer Blog
+
+# Allow all search engines to crawl the site
+User-agent: *
+Allow: /
+
+# Disallow crawling of admin/backend areas (if any in future)
+Disallow: /admin/
+Disallow: /api/
+
+# Sitemap location
+Sitemap: https://janabiprogrammer.com/sitemap.xml
+`
