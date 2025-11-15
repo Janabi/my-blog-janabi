@@ -20,7 +20,7 @@
   font-weight: 700;
   color: #2d3748;
   margin: 0 0 1rem 0;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #1E3A8A 0%, #047857 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -53,14 +53,14 @@
 }
 
 .lang-button:hover {
-  border-color: #667eea;
-  color: #667eea;
+  border-color: #1E3A8A;
+  color: #1E3A8A;
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(102, 126, 234, 0.2);
 }
 
 .lang-button.active {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #4f70ca 0%, #047857 100%);
   border-color: transparent;
   color: white;
   box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
@@ -74,7 +74,7 @@
 
 .toggle-button {
   padding: 0.75rem 1.5rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #4f70ca 0%, #047857 100%);
   color: white;
   border: none;
   border-radius: 8px;
@@ -123,7 +123,7 @@
 
 .code-textarea:focus {
   outline: none;
-  border-color: #667eea;
+  border-color: #1E3A8A;
   box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
 }
 
@@ -149,7 +149,7 @@
   padding: 1.5rem;
   background: #f7fafc;
   border-radius: 8px;
-  border-left: 4px solid #667eea;
+  border-left: 4px solid #1E3A8A;
 }
 
 .example-item h3 {
@@ -193,13 +193,13 @@
 
 .playground-info li:before {
   content: "✓ ";
-  color: #667eea;
+  color: #1E3A8A;
   font-weight: bold;
   margin-right: 0.5rem;
 }
 
 .playground-info a {
-  color: #667eea;
+  color: #1E3A8A;
   text-decoration: none;
   font-weight: 600;
 }

@@ -21,13 +21,13 @@
 }
 
 .breadcrumb a {
-  color: #667eea;
+  color: #1E3A8A;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .breadcrumb a:hover {
-  color: #764ba2;
+  color: #047857;
   text-decoration: underline;
 }
 
@@ -51,7 +51,7 @@
 }
 
 .post-category {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #4f70ca 0%, #047857 100%);
   color: white;
   padding: 0.4rem 1rem;
   border-radius: 20px;
@@ -179,13 +179,13 @@
 }
 
 .post-content a {
-  color: #667eea;
+  color: #1E3A8A;
   text-decoration: underline;
   transition: color 0.3s ease;
 }
 
 .post-content a:hover {
-  color: #764ba2;
+  color: #047857;
 }
 
 .post-footer {
@@ -209,7 +209,7 @@
 }
 
 .back-link {
-  color: #667eea;
+  color: #1E3A8A;
   text-decoration: none;
   font-weight: 600;
   transition: color 0.3s ease;
@@ -218,7 +218,7 @@
 }
 
 .back-link:hover {
-  color: #764ba2;
+  color: #047857;
   text-decoration: underline;
 }
 

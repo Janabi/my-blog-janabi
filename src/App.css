@@ -37,12 +37,12 @@ html {
 /* Focus styles for accessibility */
 a:focus,
 button:focus {
-  outline: 2px solid #667eea;
+  outline: 2px solid #1E3A8A;
   outline-offset: 2px;
 }
 
 /* Selection color */
 ::selection {
-  background-color: #667eea;
+  background-color: #1E3A8A;
   color: white;
 }

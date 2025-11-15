@@ -13,19 +13,35 @@
   line-height: 1.6;
   font-weight: 400;
 
-  /* Colors */
-  --primary-color: #667eea;
-  --secondary-color: #764ba2;
+  /* Light theme colors (default) */
+  --primary-color: #21326b;
+  --secondary-color: #047857;
   --text-color: #2d3748;
   --text-light: #4a5568;
   --bg-color: #f7fafc;
   --white: #ffffff;
+  --card-bg: #ffffff;
+  --border-color: #e2e8f0;
+  --code-bg: #f4f4f4;
 
   /* Rendering */
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Dark theme colors */
+[data-theme='dark'] {
+  --primary-color: #96befd;
+  --secondary-color: #10B981;
+  --text-color: #e2e8f0;
+  --text-light: #cbd5e0;
+  --bg-color: #1a202c;
+  --white: #2d3748;
+  --card-bg: #2d3748;
+  --border-color: #4a5568;
+  --code-bg: #374151;
 }
 
 body {
@@ -66,7 +82,7 @@ a:hover {
 /* Code blocks */
 code {
   font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'Courier New', monospace;
-  background-color: #f4f4f4;
+  background-color: var(--code-bg);
   padding: 0.2rem 0.4rem;
   border-radius: 3px;
   font-size: 0.9em;

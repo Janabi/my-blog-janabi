@@ -33,7 +33,7 @@
 }
 
 .blog-category {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #1E3A8A 0%, #047857 100%);
   color: white;
   padding: 0.25rem 0.75rem;
   border-radius: 20px;
@@ -58,7 +58,7 @@
 }
 
 .blog-card:hover .blog-title {
-  color: #667eea;
+  color: #1E3A8A;
 }
 
 .blog-description {
