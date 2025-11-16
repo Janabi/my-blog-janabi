@@ -13,16 +13,32 @@
   line-height: 1.6;
   font-weight: 400;
 
-  /* Light theme colors (default) */
-  --primary-color: #21326b;
+  /* Three-Color System - Light Mode */
+  /* Color 1: Primary (Blue) */
+  --primary-color: #1e3a8a;
+  --primary-light: #3b82f6;
+
+  /* Color 2: Secondary (Teal) */
   --secondary-color: #047857;
-  --text-color: #2d3748;
-  --text-light: #4a5568;
-  --bg-color: #f7fafc;
+  --secondary-light: #10b981;
+
+  /* Color 3: Neutral (Gray scale) */
+  --neutral-50: #f7fafc;
+  --neutral-100: #f4f4f4;
+  --neutral-200: #e2e8f0;
+  --neutral-400: #cbd5e0;
+  --neutral-500: #4a5568;
+  --neutral-700: #2d3748;
+  --neutral-900: #1a202c;
+
+  /* Applied colors */
+  --text-color: var(--neutral-700);
+  --text-light: var(--neutral-500);
+  --bg-color: var(--neutral-50);
   --white: #ffffff;
   --card-bg: #ffffff;
-  --border-color: #e2e8f0;
-  --code-bg: #f4f4f4;
+  --border-color: var(--neutral-200);
+  --code-bg: var(--neutral-100);
 
   /* Rendering */
   font-synthesis: none;
@@ -31,17 +47,33 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Dark theme colors */
+/* Three-Color System - Dark Mode */
 [data-theme='dark'] {
-  --primary-color: #96befd;
-  --secondary-color: #10B981;
-  --text-color: #e2e8f0;
-  --text-light: #cbd5e0;
-  --bg-color: #1a202c;
-  --white: #2d3748;
-  --card-bg: #2d3748;
-  --border-color: #4a5568;
-  --code-bg: #374151;
+  /* Color 1: Primary (Blue) - lighter shade for dark mode */
+  --primary-color: #60a5fa;
+  --primary-light: #93c5fd;
+
+  /* Color 2: Secondary (Teal) - lighter shade for dark mode */
+  --secondary-color: #10b981;
+  --secondary-light: #34d399;
+
+  /* Color 3: Neutral (inverted for dark mode) */
+  --neutral-50: #1a202c;
+  --neutral-100: #2d3748;
+  --neutral-200: #4a5568;
+  --neutral-400: #718096;
+  --neutral-500: #cbd5e0;
+  --neutral-700: #e2e8f0;
+  --neutral-900: #f7fafc;
+
+  /* Applied colors */
+  --text-color: var(--neutral-700);
+  --text-light: var(--neutral-500);
+  --bg-color: var(--neutral-50);
+  --white: var(--neutral-100);
+  --card-bg: var(--neutral-100);
+  --border-color: var(--neutral-200);
+  --code-bg: var(--neutral-200);
 }
 
 body {

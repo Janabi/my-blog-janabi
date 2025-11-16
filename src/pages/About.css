@@ -1,7 +1,7 @@
 .about-page {
   min-height: calc(100vh - 200px);
   padding: 3rem 0;
-  background: linear-gradient(to bottom, #f7fafc 0%, #ffffff 100%);
+  background: linear-gradient(to bottom, var(--neutral-50) 0%, var(--white) 100%);
 }
 
 .about-container {
@@ -14,7 +14,7 @@
   text-align: center;
   margin-bottom: 3rem;
   padding: 2rem;
-  background: linear-gradient(135deg, #1E3A8A 0%, #047857 100%);
+  background: linear-gradient(135deg, #60a5fa 0%, #10b981 100%);
   color: white;
   border-radius: 12px;
 }
@@ -32,7 +32,7 @@
 }
 
 .about-content {
-  background: white;
+  background: var(--card-bg);
   padding: 3rem;
   border-radius: 12px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -49,24 +49,24 @@
 .about-section h2 {
   font-size: 1.8rem;
   font-weight: 700;
-  color: #2d3748;
+  color: var(--text-color);
   margin: 0 0 1rem 0;
   padding-bottom: 0.5rem;
-  border-bottom: 3px solid #1E3A8A;
+  border-bottom: 3px solid var(--primary-color);
   display: inline-block;
 }
 
 .about-section h3 {
   font-size: 1.3rem;
   font-weight: 600;
-  color: #2d3748;
+  color: var(--text-color);
   margin: 0 0 0.5rem 0;
 }
 
 .about-section p {
   font-size: 1.1rem;
   line-height: 1.8;
-  color: #4a5568;
+  color: var(--text-light);
   margin: 1rem 0;
 }
 
@@ -78,12 +78,12 @@
 .about-section li {
   font-size: 1.1rem;
   line-height: 1.8;
-  color: #4a5568;
+  color: var(--text-light);
   margin: 0.75rem 0;
 }
 
 .about-section li strong {
-  color: #2d3748;
+  color: var(--text-color);
   font-weight: 600;
 }
 
@@ -95,21 +95,21 @@
 }
 
 .topic-card {
-  background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+  background: linear-gradient(135deg, var(--neutral-50) 0%, var(--neutral-100) 100%);
   padding: 1.5rem;
   border-radius: 8px;
-  border-left: 4px solid #1E3A8A;
+  border-left: 4px solid var(--primary-color);
 }
 
 .topic-card h3 {
-  color: #1E3A8A;
+  color: var(--primary-color);
   margin-bottom: 0.75rem;
 }
 
 .topic-card p {
   font-size: 0.95rem;
   margin: 0;
-  color: #4a5568;
+  color: var(--text-light);
   line-height: 1.6;
 }
 
@@ -117,12 +117,12 @@
   text-align: center;
   margin-top: 2rem;
   padding-top: 2rem;
-  border-top: 2px solid #e2e8f0;
+  border-top: 2px solid var(--border-color);
 }
 
 .cta-button {
   display: inline-block;
-  background: linear-gradient(135deg, #1E3A8A 0%, #047857 100%);
+  background: linear-gradient(135deg, #60a5fa 0%, #10b981 100%);
   color: white;
   padding: 1rem 2.5rem;
   border-radius: 8px;

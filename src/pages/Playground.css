@@ -1,7 +1,7 @@
 .playground-page {
   min-height: calc(100vh - 200px);
   padding: 3rem 0;
-  background: linear-gradient(to bottom, #f7fafc 0%, #ffffff 100%);
+  background: linear-gradient(to bottom, var(--neutral-50) 0%, var(--white) 100%);
 }
 
 .playground-container {
@@ -18,9 +18,9 @@
 .playground-header h1 {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #2d3748;
+  color: var(--text-color);
   margin: 0 0 1rem 0;
-  background: linear-gradient(135deg, #1E3A8A 0%, #047857 100%);
+  background: linear-gradient(135deg, #60a5fa 0%, #10b981 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -28,7 +28,7 @@
 
 .playground-subtitle {
   font-size: 1.2rem;
-  color: #4a5568;
+  color: var(--text-light);
   margin: 0;
 }
 
@@ -42,25 +42,25 @@
 
 .lang-button {
   padding: 0.75rem 2rem;
-  background: white;
-  border: 2px solid #e2e8f0;
+  background: var(--card-bg);
+  border: 2px solid var(--border-color);
   border-radius: 8px;
   font-size: 1rem;
   font-weight: 600;
-  color: #4a5568;
+  color: var(--text-light);
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .lang-button:hover {
-  border-color: #1E3A8A;
-  color: #1E3A8A;
+  border-color: var(--primary-color);
+  color: var(--primary-color);
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(102, 126, 234, 0.2);
 }
 
 .lang-button.active {
-  background: linear-gradient(135deg, #4f70ca 0%, #047857 100%);
+  background: linear-gradient(135deg, #60a5fa 0%, #10b981 100%);
   border-color: transparent;
   color: white;
   box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
@@ -74,7 +74,7 @@
 
 .toggle-button {
   padding: 0.75rem 1.5rem;
-  background: linear-gradient(135deg, #4f70ca 0%, #047857 100%);
+  background: linear-gradient(135deg, #60a5fa 0%, #10b981 100%);
   color: white;
   border: none;
   border-radius: 8px;
@@ -90,7 +90,7 @@
 }
 
 .custom-code-section {
-  background: white;
+  background: var(--card-bg);
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -98,7 +98,7 @@
 }
 
 .custom-code-section h2 {
-  color: #2d3748;
+  color: var(--text-color);
   margin: 0 0 1.5rem 0;
   font-size: 1.5rem;
 }
@@ -123,19 +123,19 @@
 
 .code-textarea:focus {
   outline: none;
-  border-color: #1E3A8A;
+  border-color: var(--primary-color);
   box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
 }
 
 .examples-section {
-  background: white;
+  background: var(--card-bg);
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .examples-section h2 {
-  color: #2d3748;
+  color: var(--text-color);
   margin: 0 0 2rem 0;
   font-size: 1.8rem;
 }
@@ -147,13 +147,13 @@
 
 .example-item {
   padding: 1.5rem;
-  background: #f7fafc;
+  background: var(--neutral-50);
   border-radius: 8px;
-  border-left: 4px solid #1E3A8A;
+  border-left: 4px solid var(--primary-color);
 }
 
 .example-item h3 {
-  color: #2d3748;
+  color: var(--text-color);
   margin: 0 0 1rem 0;
   font-size: 1.3rem;
 }
@@ -161,11 +161,11 @@
 .no-examples {
   text-align: center;
   padding: 3rem;
-  color: #718096;
+  color: var(--neutral-400);
 }
 
 .playground-info {
-  background: white;
+  background: var(--card-bg);
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -173,7 +173,7 @@
 }
 
 .playground-info h3 {
-  color: #2d3748;
+  color: var(--text-color);
   margin: 0 0 1rem 0;
   font-size: 1.3rem;
 }
@@ -186,20 +186,20 @@
 
 .playground-info li {
   padding: 0.5rem 0;
-  color: #4a5568;
+  color: var(--text-light);
   font-size: 1rem;
   line-height: 1.6;
 }
 
 .playground-info li:before {
   content: "✓ ";
-  color: #1E3A8A;
+  color: var(--primary-color);
   font-weight: bold;
   margin-right: 0.5rem;
 }
 
 .playground-info a {
-  color: #1E3A8A;
+  color: var(--primary-color);
   text-decoration: none;
   font-weight: 600;
 }
