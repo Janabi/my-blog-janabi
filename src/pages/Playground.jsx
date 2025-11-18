@@ -18,8 +18,8 @@ const Playground = () => {
     <>
       <Helmet>
         <title>Code Playground | Janabi Programmer</title>
-        <meta name="description" content="Interactive code playground to run JavaScript, Python, and Rust code directly in your browser. Learn programming by doing with Janabi Programmer." />
-        <meta name="keywords" content="code playground, online code editor, JavaScript playground, Python playground, Rust playground, interactive coding" />
+        <meta name="description" content="Interactive code playground to run JavaScript and Python code directly in your browser. Learn programming by doing with Janabi Programmer." />
+        <meta name="keywords" content="code playground, online code editor, JavaScript playground, Python playground, interactive coding" />
 
         <meta property="og:type" content="website" />
         <meta property="og:url" content={playgroundUrl} />
@@ -38,7 +38,7 @@ const Playground = () => {
           <header className="playground-header">
             <h1>Interactive Code Playground</h1>
             <p className="playground-subtitle">
-              Run JavaScript, Python, and Rust code directly in your browser
+              Run JavaScript and Python code directly in your browser
             </p>
           </header>
 
@@ -54,12 +54,6 @@ const Playground = () => {
               onClick={() => setSelectedLanguage('python')}
             >
               Python
-            </button>
-            <button
-              className={`lang-button ${selectedLanguage === 'rust' ? 'active' : ''}`}
-              onClick={() => setSelectedLanguage('rust')}
-            >
-              Rust
             </button>
           </div>
 

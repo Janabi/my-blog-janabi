@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import { useTheme } from '../../context/ThemeContext';
 import './Header.css';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -40,6 +42,17 @@ const Header = () => {
               <Link to="/about" aria-label="About Janabi Programmer">About</Link>
             </li>
           </ul>
+          <button
+            className="theme-toggle"
+            onClick={toggleTheme}
+            aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+          >
+            <div className="toggle-track">
+              <div className={`toggle-thumb ${theme === 'dark' ? 'dark' : ''}`}>
+                {theme === 'light' ? '☀️' : '🌙'}
+              </div>
+            </div>
+          </button>
         </nav>
       </div>
     </header>
