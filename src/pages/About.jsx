@@ -1,8 +1,10 @@
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
+import { useTranslation } from '../hooks/useTranslation';
 import './About.css';
 
 const About = () => {
+  const { t } = useTranslation();
   const siteUrl = 'https://janabiprogrammer.com';
   const aboutUrl = `${siteUrl}/about`;
 
@@ -52,109 +54,93 @@ const About = () => {
       <main className="about-page">
         <div className="about-container">
           <header className="about-header">
-            <h1>About Janabi Programmer</h1>
-            <p className="about-subtitle">Empowering Developers Through Knowledge Sharing</p>
+            <h1>{t('about.title')}</h1>
+            <p className="about-subtitle">{t('about.subtitle')}</p>
           </header>
 
           <section className="about-content">
             <article className="about-section">
-              <h2>Welcome</h2>
+              <h2>{t('about.sections.welcome.title')}</h2>
               <p>
-                Hello! I'm Janabi, a passionate software developer dedicated to exploring and sharing
-                knowledge about programming languages and their unique features. This blog is my way
-                of contributing to the developer community and helping others learn and grow.
+                {t('about.sections.welcome.content')}
               </p>
             </article>
 
             <article className="about-section">
-              <h2>My Mission</h2>
+              <h2>{t('about.sections.mission.title')}</h2>
               <p>
-                My mission is to make complex programming concepts accessible and understandable to
-                developers at all levels. Whether you're just starting your coding journey or you're
-                an experienced developer looking to expand your knowledge, you'll find valuable
-                insights here.
+                {t('about.sections.mission.content')}
               </p>
             </article>
 
             <article className="about-section">
-              <h2>What You'll Find Here</h2>
+              <h2>{t('about.sections.whatYouFind.title')}</h2>
               <ul>
                 <li>
-                  <strong>In-Depth Tutorials:</strong> Comprehensive guides on programming languages
-                  including JavaScript, Python, TypeScript, Rust, and more.
+                  <strong>{t('about.sections.whatYouFind.items.tutorials.title')}</strong> {t('about.sections.whatYouFind.items.tutorials.description')}
                 </li>
                 <li>
-                  <strong>Modern Features:</strong> Exploration of the latest features and best
-                  practices in popular programming languages.
+                  <strong>{t('about.sections.whatYouFind.items.modernFeatures.title')}</strong> {t('about.sections.whatYouFind.items.modernFeatures.description')}
                 </li>
                 <li>
-                  <strong>Best Practices:</strong> Learn industry-standard coding conventions and
-                  patterns that will make you a better developer.
+                  <strong>{t('about.sections.whatYouFind.items.bestPractices.title')}</strong> {t('about.sections.whatYouFind.items.bestPractices.description')}
                 </li>
                 <li>
-                  <strong>Practical Examples:</strong> Real-world code examples that you can use in
-                  your own projects.
+                  <strong>{t('about.sections.whatYouFind.items.practicalExamples.title')}</strong> {t('about.sections.whatYouFind.items.practicalExamples.description')}
                 </li>
                 <li>
-                  <strong>Comparisons:</strong> Understanding the strengths and use cases of different
-                  programming languages.
+                  <strong>{t('about.sections.whatYouFind.items.comparisons.title')}</strong> {t('about.sections.whatYouFind.items.comparisons.description')}
                 </li>
               </ul>
             </article>
 
             <article className="about-section">
-              <h2>My Approach</h2>
+              <h2>{t('about.sections.approach.title')}</h2>
               <p>
-                I believe in learning by doing. Each article on this blog is carefully crafted with:
+                {t('about.sections.approach.intro')}
               </p>
               <ul>
-                <li>Clear explanations of concepts</li>
-                <li>Practical, working code examples</li>
-                <li>Real-world use cases</li>
-                <li>Best practices and common pitfalls to avoid</li>
+                {t('about.sections.approach.items').map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
               </ul>
               <p>
-                My goal is not just to teach syntax, but to help you understand the "why" behind
-                programming decisions and develop a deeper appreciation for different languages and
-                their philosophies.
+                {t('about.sections.approach.conclusion')}
               </p>
             </article>
 
             <article className="about-section">
-              <h2>Topics Covered</h2>
+              <h2>{t('about.sections.topics.title')}</h2>
               <div className="topics-grid">
                 <div className="topic-card">
-                  <h3>JavaScript</h3>
-                  <p>Modern ES6+ features, async programming, frameworks, and web development</p>
+                  <h3>{t('about.sections.topics.javascript.title')}</h3>
+                  <p>{t('about.sections.topics.javascript.description')}</p>
                 </div>
                 <div className="topic-card">
-                  <h3>Python</h3>
-                  <p>Pythonic code, data structures, best practices, and clean code principles</p>
+                  <h3>{t('about.sections.topics.python.title')}</h3>
+                  <p>{t('about.sections.topics.python.description')}</p>
                 </div>
                 <div className="topic-card">
-                  <h3>TypeScript</h3>
-                  <p>Type systems, generics, advanced types, and building scalable applications</p>
+                  <h3>{t('about.sections.topics.typescript.title')}</h3>
+                  <p>{t('about.sections.topics.typescript.description')}</p>
                 </div>
                 <div className="topic-card">
-                  <h3>Rust</h3>
-                  <p>Memory safety, ownership, borrowing, and systems programming</p>
+                  <h3>{t('about.sections.topics.rust.title')}</h3>
+                  <p>{t('about.sections.topics.rust.description')}</p>
                 </div>
               </div>
             </article>
 
             <article className="about-section">
-              <h2>Join the Journey</h2>
+              <h2>{t('about.sections.journey.title')}</h2>
               <p>
-                Programming is an ever-evolving field, and I'm continuously learning and sharing new
-                insights. I invite you to join me on this journey of discovery and growth.
+                {t('about.sections.journey.content1')}
               </p>
               <p>
-                Whether you're here to learn a new language, deepen your understanding of one you
-                already know, or simply stay updated with modern programming practices, I'm glad
-                you're here.
+                {t('about.sections.journey.content2')}
               </p>
               <div className="cta-section">
-                <Link to="/" className="cta-button">Explore Articles</Link>
+                <Link to="/" className="cta-button">{t('about.sections.journey.cta')}</Link>
               </div>
             </article>
           </section>

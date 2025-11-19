@@ -1,9 +1,11 @@
 import { Helmet } from 'react-helmet-async';
 import BlogCard from '../components/blog/BlogCard';
 import { blogPosts } from '../data/blogPosts';
+import { useTranslation } from '../hooks/useTranslation';
 import './Home.css';
 
 const Home = () => {
+  const { t } = useTranslation();
   const siteUrl = 'https://janabiprogrammer.com';
   const structuredData = {
     "@context": "https://schema.org",
@@ -62,17 +64,16 @@ const Home = () => {
       <main className="home-page">
         <section className="hero-section">
           <div className="hero-content">
-            <h1>Welcome to Janabi Programmer</h1>
+            <h1>{t('home.hero.title')}</h1>
             <p className="hero-description">
-              Your go-to resource for learning about programming languages and their unique features.
-              Dive deep into JavaScript, Python, TypeScript, Rust, and more.
+              {t('home.hero.description')}
             </p>
           </div>
         </section>
 
         <section className="blog-section">
           <div className="container">
-            <h2 className="section-title">Latest Articles</h2>
+            <h2 className="section-title">{t('home.latestArticles')}</h2>
             <div className="blog-grid">
               {blogPosts.map(post => (
                 <BlogCard key={post.id} post={post} />

@@ -46,3 +46,41 @@ button:focus {
   background-color: var(--primary-color);
   color: white;
 }
+
+/* RTL (Right-to-Left) Support for Arabic */
+[dir="rtl"] {
+  text-align: right;
+}
+
+[dir="rtl"] .header-container,
+[dir="rtl"] .footer-container {
+  direction: rtl;
+}
+
+[dir="rtl"] .main-nav ul {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .header-controls {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .blog-grid {
+  direction: rtl;
+}
+
+[dir="rtl"] .blog-card {
+  text-align: right;
+}
+
+[dir="rtl"] .footer-content {
+  direction: rtl;
+}
+
+[dir="rtl"] .topics-grid {
+  direction: rtl;
+}
+
+[dir="rtl"] .topic-card {
+  text-align: right;
+}
