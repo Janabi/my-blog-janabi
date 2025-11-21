@@ -1,6 +1,8 @@
+import { useTranslation } from '../../hooks/useTranslation';
 import './Footer.css';
 
 const Footer = () => {
+  const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
 
   return (
@@ -8,13 +10,12 @@ const Footer = () => {
       <div className="footer-container">
         <div className="footer-content">
           <div className="footer-section">
-            <h3>Janabi Programmer</h3>
-            <p>Exploring the world of programming languages and their unique features.
-            Learn, grow, and master modern software development.</p>
+            <h3>{t('header.siteName')}</h3>
+            <p>{t('footer.about')}</p>
           </div>
 
           <div className="footer-section">
-            <h3>Categories</h3>
+            <h3>{t('footer.categories')}</h3>
             <ul>
               <li><a href="/?category=JavaScript">JavaScript</a></li>
               <li><a href="/?category=Python">Python</a></li>
@@ -24,19 +25,19 @@ const Footer = () => {
           </div>
 
           <div className="footer-section">
-            <h3>Quick Links</h3>
+            <h3>{t('footer.quickLinks')}</h3>
             <ul>
-              <li><a href="/">Home</a></li>
-              <li><a href="/playground">Playground</a></li>
-              <li><a href="/about">About</a></li>
-              <li><a href="/sitemap.xml">Sitemap</a></li>
+              <li><a href="/">{t('footer.links.home')}</a></li>
+              <li><a href="/playground">{t('footer.links.playground')}</a></li>
+              <li><a href="/about">{t('footer.links.about')}</a></li>
+              <li><a href="/sitemap.xml">{t('footer.links.sitemap')}</a></li>
             </ul>
           </div>
         </div>
 
         <div className="footer-bottom">
-          <p>&copy; {currentYear} Janabi Programmer. All rights reserved.</p>
-          <p className="footer-tagline">Empowering developers through knowledge sharing</p>
+          <p>&copy; {currentYear} {t('header.siteName')}. {t('footer.rights')}</p>
+          <p className="footer-tagline">{t('footer.tagline')}</p>
         </div>
       </div>
     </footer>

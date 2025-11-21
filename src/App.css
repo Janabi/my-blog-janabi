@@ -2,16 +2,22 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 .app main {
   flex: 1;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* Utility classes */
@@ -45,4 +51,42 @@ button:focus {
 ::selection {
   background-color: var(--primary-color);
   color: white;
+}
+
+/* RTL (Right-to-Left) Support for Arabic */
+[dir="rtl"] {
+  text-align: right;
+}
+
+[dir="rtl"] .header-container,
+[dir="rtl"] .footer-container {
+  direction: rtl;
+}
+
+[dir="rtl"] .main-nav ul {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .header-controls {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .blog-grid {
+  direction: rtl;
+}
+
+[dir="rtl"] .blog-card {
+  text-align: right;
+}
+
+[dir="rtl"] .footer-content {
+  direction: rtl;
+}
+
+[dir="rtl"] .topics-grid {
+  direction: rtl;
+}
+
+[dir="rtl"] .topic-card {
+  text-align: right;
 }
