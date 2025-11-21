@@ -76,6 +76,11 @@
   --code-bg: var(--neutral-200);
 }
 
+html {
+  overflow-x: hidden;
+  width: 100%;
+}
+
 body {
   margin: 0;
   min-width: 320px;
@@ -83,10 +88,14 @@ body {
   background-color: var(--bg-color);
   color: var(--text-color);
   font-size: 16px;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 #root {
   min-height: 100vh;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 /* Typography */

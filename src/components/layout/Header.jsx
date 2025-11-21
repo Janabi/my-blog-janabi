@@ -1,14 +1,13 @@
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { useTheme } from '../../context/ThemeContext';
-import { useLanguage } from '../../context/LanguageContext';
 import { useTranslation } from '../../hooks/useTranslation';
+import LanguageDropdown from '../common/LanguageDropdown';
 import './Header.css';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const { theme, toggleTheme } = useTheme();
-  const { language, changeLanguage } = useLanguage();
   const { t } = useTranslation();
 
   useEffect(() => {
@@ -47,15 +46,8 @@ const Header = () => {
             </li>
           </ul>
           <div className="header-controls">
-            <select
-              className="language-selector"
-              value={language}
-              onChange={(e) => changeLanguage(e.target.value)}
-              aria-label="Select Language"
-            >
-              <option value="en">EN</option>
-              <option value="ar">AR</option>
-            </select>
+            <LanguageDropdown />
+
             <button
               className="theme-toggle"
               onClick={toggleTheme}
