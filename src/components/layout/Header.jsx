@@ -7,6 +7,7 @@ import './Header.css';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
   const { t } = useTranslation();
 
@@ -23,6 +24,25 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMobileMenuOpen]);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
+
   return (
     <header className={`site-header ${isScrolled ? 'scrolled' : ''}`} role="banner">
       <div className="header-container">
@@ -33,7 +53,18 @@ const Header = () => {
           <p className="tagline">{t('header.tagline')}</p>
         </div>
 
-        <nav className="main-nav" role="navigation" aria-label="Main navigation">
+        <button
+          className={`burger-menu ${isMobileMenuOpen ? 'open' : ''}`}
+          onClick={toggleMobileMenu}
+          aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={isMobileMenuOpen}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav className="main-nav desktop-nav" role="navigation" aria-label="Main navigation">
           <ul>
             <li>
               <Link to="/" aria-label="Home page">{t('header.nav.home')}</Link>
@@ -61,6 +92,42 @@ const Header = () => {
             </button>
           </div>
         </nav>
+
+        <div className={`mobile-menu-overlay ${isMobileMenuOpen ? 'open' : ''}`}>
+          <nav className="mobile-nav" role="navigation" aria-label="Mobile navigation">
+            <ul>
+              <li>
+                <Link to="/" onClick={closeMobileMenu} aria-label="Home page">
+                  {t('header.nav.home')}
+                </Link>
+              </li>
+              <li>
+                <Link to="/playground" onClick={closeMobileMenu} aria-label="Code Playground">
+                  {t('header.nav.playground')}
+                </Link>
+              </li>
+              <li>
+                <Link to="/about" onClick={closeMobileMenu} aria-label={`About ${t('header.siteName')}`}>
+                  {t('header.nav.about')}
+                </Link>
+              </li>
+            </ul>
+            <div className="mobile-controls">
+              <LanguageDropdown />
+              <button
+                className="theme-toggle"
+                onClick={toggleTheme}
+                aria-label={theme === 'light' ? t('header.themeToggle.switchToDark') : t('header.themeToggle.switchToLight')}
+              >
+                <div className="toggle-track">
+                  <div className={`toggle-thumb ${theme === 'dark' ? 'dark' : ''}`}>
+                    {theme === 'light' ? '☀️' : '🌙'}
+                  </div>
+                </div>
+              </button>
+            </div>
+          </nav>
+        </div>
       </div>
     </header>
   );
