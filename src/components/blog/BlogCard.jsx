@@ -1,14 +1,17 @@
 import { Link } from 'react-router-dom';
+import { useLanguage } from '../../context/LanguageContext';
 import './BlogCard.css';
 
 const BlogCard = ({ post }) => {
+  const { language } = useLanguage();
+
   return (
     <article className="blog-card" itemScope itemType="https://schema.org/BlogPosting">
       <Link to={`/blog/${post.slug}`} className="blog-card-link" aria-label={`Read ${post.title}`}>
         <div className="blog-card-header">
           <span className="blog-category" itemProp="articleSection">{post.category}</span>
           <time className="blog-date" dateTime={post.publishDate} itemProp="datePublished">
-            {new Date(post.publishDate).toLocaleDateString('en-US', {
+            {new Date(post.publishDate).toLocaleDateString(language === 'ar' ? 'ar-EG' : 'en-US', {
               year: 'numeric',
               month: 'long',
               day: 'numeric'

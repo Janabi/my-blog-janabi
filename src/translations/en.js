@@ -127,4 +127,15 @@ export const en = {
     loading: 'Loading...',
     error: 'An error occurred',
   },
+
+  // Blog Post
+  blogPost: {
+    notFound: {
+      title: 'Post Not Found',
+      message: "The blog post you're looking for doesn't exist.",
+    },
+    backToHome: 'Back to Home',
+    backToAllPosts: 'Back to All Posts',
+    lastUpdated: 'Last updated',
+  },
 };

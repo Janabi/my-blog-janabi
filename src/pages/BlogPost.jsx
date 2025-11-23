@@ -1,18 +1,22 @@
 import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { getPostBySlug } from '../data/blogPosts';
+import { useLanguage } from '../context/LanguageContext';
+import { useTranslation } from '../hooks/useTranslation';
 import './BlogPost.css';
 
 const BlogPost = () => {
   const { slug } = useParams();
-  const post = getPostBySlug(slug);
+  const { language } = useLanguage();
+  const { t } = useTranslation();
+  const post = getPostBySlug(slug, language);
 
   if (!post) {
     return (
       <div className="container" style={{ padding: '4rem 1rem', textAlign: 'center' }}>
-        <h1>Post Not Found</h1>
-        <p>The blog post you're looking for doesn't exist.</p>
-        <Link to="/" className="back-link">← Back to Home</Link>
+        <h1>{t('blogPost.notFound.title') || 'Post Not Found'}</h1>
+        <p>{t('blogPost.notFound.message') || "The blog post you're looking for doesn't exist."}</p>
+        <Link to="/" className="back-link">← {t('blogPost.backToHome') || 'Back to Home'}</Link>
       </div>
     );
   }
@@ -117,7 +121,7 @@ const BlogPost = () => {
       <main className="blog-post-page">
         <article className="blog-post-container" itemScope itemType="https://schema.org/BlogPosting">
           <nav className="breadcrumb" aria-label="Breadcrumb">
-            <Link to="/">Home</Link>
+            <Link to="/">{t('header.nav.home')}</Link>
             <span className="separator">/</span>
             <Link to={`/?category=${post.category}`}>{post.category}</Link>
             <span className="separator">/</span>
@@ -128,7 +132,7 @@ const BlogPost = () => {
             <div className="post-meta-top">
               <span className="post-category" itemProp="articleSection">{post.category}</span>
               <time className="post-date" dateTime={post.publishDate} itemProp="datePublished">
-                {new Date(post.publishDate).toLocaleDateString('en-US', {
+                {new Date(post.publishDate).toLocaleDateString(language === 'ar' ? 'ar-EG' : 'en-US', {
                   year: 'numeric',
                   month: 'long',
                   day: 'numeric'
@@ -143,7 +147,7 @@ const BlogPost = () => {
             <div className="post-meta-bottom">
               <div className="author-info">
                 <span itemProp="author" itemScope itemType="https://schema.org/Person">
-                  By <strong itemProp="name">{post.author}</strong>
+                  {t('blogCard.by')} <strong itemProp="name">{post.author}</strong>
                 </span>
                 <span className="separator">•</span>
                 <span className="read-time">{post.readTime}</span>
@@ -165,9 +169,9 @@ const BlogPost = () => {
 
           <footer className="post-footer">
             <div className="post-footer-meta">
-              <p>Last updated: <time dateTime={post.lastModified}>{new Date(post.lastModified).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time></p>
+              <p>{t('blogPost.lastUpdated') || 'Last updated'}: <time dateTime={post.lastModified}>{new Date(post.lastModified).toLocaleDateString(language === 'ar' ? 'ar-EG' : 'en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time></p>
             </div>
-            <Link to="/" className="back-link">← Back to All Posts</Link>
+            <Link to="/" className="back-link">← {t('blogPost.backToAllPosts') || 'Back to All Posts'}</Link>
           </footer>
         </article>
       </main>

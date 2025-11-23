@@ -127,4 +127,15 @@ export const ar = {
     loading: 'جاري التحميل...',
     error: 'حدث خطأ',
   },
+
+  // Blog Post
+  blogPost: {
+    notFound: {
+      title: 'المقالة غير موجودة',
+      message: 'المقالة التي تبحث عنها غير موجودة.',
+    },
+    backToHome: 'العودة للرئيسية',
+    backToAllPosts: 'العودة لجميع المقالات',
+    lastUpdated: 'آخر تحديث',
+  },
 };

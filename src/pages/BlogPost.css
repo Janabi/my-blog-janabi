@@ -171,11 +171,17 @@
   margin: 1.5rem 0;
   font-size: 0.95rem;
   line-height: 1.6;
+  /* Force LTR direction for code blocks even in RTL context */
+  direction: ltr;
+  text-align: left;
 }
 
 .post-content code {
   font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
   font-size: 0.9em;
+  /* Force LTR direction for inline code as well */
+  direction: ltr;
+  unicode-bidi: embed;
 }
 
 .post-content a {

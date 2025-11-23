@@ -1,11 +1,14 @@
 import { Helmet } from 'react-helmet-async';
 import BlogCard from '../components/blog/BlogCard';
-import { blogPosts } from '../data/blogPosts';
+import { getAllPosts } from '../data/blogPosts';
 import { useTranslation } from '../hooks/useTranslation';
+import { useLanguage } from '../context/LanguageContext';
 import './Home.css';
 
 const Home = () => {
   const { t } = useTranslation();
+  const { language } = useLanguage();
+  const posts = getAllPosts(language);
   const siteUrl = 'https://janabiprogrammer.com';
   const structuredData = {
     "@context": "https://schema.org",
@@ -17,7 +20,7 @@ const Home = () => {
       "@type": "Person",
       "name": "Janabi Programmer"
     },
-    "blogPost": blogPosts.map(post => ({
+    "blogPost": posts.map(post => ({
       "@type": "BlogPosting",
       "headline": post.title,
       "description": post.description,
@@ -75,7 +78,7 @@ const Home = () => {
           <div className="container">
             <h2 className="section-title">{t('home.latestArticles')}</h2>
             <div className="blog-grid">
-              {blogPosts.map(post => (
+              {posts.map(post => (
                 <BlogCard key={post.id} post={post} />
               ))}
             </div>
